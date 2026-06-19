@@ -1,0 +1,15 @@
+{
+  "name": "debugmelater-backend",
+  "version": "1.0.0",
+  "description": "DebugMeLater API Server",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["express", "mongodb", "typescript"],
+  "author": "DebugMeLater",
+  "license": "ISC"
+}
