@@ -49,7 +49,7 @@ export default function AdminDashboard() {
         }
         if (res.data.recentOrders?.length) setRecentOrders(res.data.recentOrders);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   const STAT_CARDS: StatCard[] = [
@@ -63,14 +63,14 @@ export default function AdminDashboard() {
     try {
       await api.patch(`/orders/${orderId}/approve`);
       setRecentOrders(orders => orders.map(o => o.orderId === orderId ? { ...o, status: 'approved' } : o));
-    } catch {}
+    } catch { }
   };
 
   const rejectOrder = async (orderId: string) => {
     try {
       await api.patch(`/orders/${orderId}/reject`);
       setRecentOrders(orders => orders.map(o => o.orderId === orderId ? { ...o, status: 'rejected' } : o));
-    } catch {}
+    } catch { }
   };
 
   return (
@@ -102,16 +102,19 @@ export default function AdminDashboard() {
           <AreaChart data={revenueData} margin={{ top: 4, right: 0, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="revenueGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="#7C3AED" stopOpacity={0}/>
+                <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#7C3AED" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
             <XAxis dataKey="month" tick={{ fill: '#475569', fontSize: 12 }} axisLine={false} tickLine={false} />
-            <YAxis tick={{ fill: '#475569', fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={(v) => `₹${(v/1000).toFixed(0)}k`} />
+            <YAxis tick={{ fill: '#475569', fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`} />
             <Tooltip
               contentStyle={{ background: '#141720', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 10, color: '#F8FAFC' }}
-              formatter={(value: number) => [formatPrice(value), 'Revenue']}
+              formatter={(value: any) => [
+                formatPrice(value ?? 0),
+                "Revenue",
+              ]}
             />
             <Area type="monotone" dataKey="revenue" stroke="#7C3AED" strokeWidth={2} fill="url(#revenueGrad)" />
           </AreaChart>

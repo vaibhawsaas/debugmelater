@@ -41,8 +41,8 @@ export default function AdminDownloadsPage() {
                 const exhausted = dl.downloadCount >= dl.maxDownloads;
                 return (
                   <tr key={dl._id}>
-                    <td style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>{typeof dl.orderId === 'string' ? dl.orderId : (dl.orderId as IDownload)._id}</td>
-                    <td style={{ fontSize: 12 }}>{typeof dl.projectId === 'string' ? dl.projectId : dl.projectId}</td>
+                    <td style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>{typeof dl.orderId === 'string' ? dl.orderId : dl.orderId?._id ?? ""}</td>
+                    <td style={{ fontSize: 12 }}>{typeof dl.projectId === 'string' ? dl.projectId : dl.projectId.title}</td>
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                         <Download size={12} style={{ color: 'var(--text-muted)' }} />

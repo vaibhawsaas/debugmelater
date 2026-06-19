@@ -58,7 +58,7 @@ export default function ProjectsPage() {
     }
   }, []);
 
-  const debouncedFetch = useCallback(debounce((q: string) => fetchProjects(q, category, sort, 1), 300), [category, sort]);
+  const debouncedFetch = useCallback(debounce((q: unknown) => { fetchProjects(q as string, category, sort, 1); }, 300), [category, sort]);
 
   useEffect(() => { fetchProjects(search, category, sort, page); }, [category, sort, page]);
   useEffect(() => { debouncedFetch(search); }, [search]);

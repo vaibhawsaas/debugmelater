@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import Link from 'next/link';
 import { Compass, Code2, ShieldCheck, Layers, Download } from 'lucide-react';
 import Image from 'next/image';
@@ -14,21 +14,21 @@ export default function HeroSection() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }
     },
   };
 
-  const floatingVariants = {
+  const floatingVariants: Variants = {
     float: (custom: number) => ({
       y: [0, -15, 0],
-      transition: { duration: 4 + custom, repeat: Infinity, ease: 'easeInOut', delay: custom * 0.5 }
+      transition: { duration: 4 + custom, repeat: Infinity, ease: 'easeInOut' as const, delay: custom * 0.5 }
     })
-  };
+  } as Variants;
 
   return (
     <section className="hero" id="hero" aria-labelledby="hero-heading" style={{ overflow: 'hidden', padding: '120px 0 80px', position: 'relative', background: 'var(--bg-primary)' }}>

@@ -66,7 +66,7 @@ export default function VideosPage() {
           paddingBottom: '80px'
         }}>
           {VIDEOS.map((video) => (
-            <div key={video.id} style={{ cursor: 'pointer', group: 'true' }} onClick={() => setModalUrl(video.url)}>
+            <div key={video.id} style={{ cursor: 'pointer' }} onClick={() => setModalUrl(video.url)}>
               {/* Thumbnail */}
               <div style={{ 
                 width: '100%', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', 
