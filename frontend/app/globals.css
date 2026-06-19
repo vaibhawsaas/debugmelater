@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 /* ═══════════════════════════════════════════════════════════════════
    DESIGN TOKENS
@@ -2098,3 +2098,204 @@ button {
   box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
   border-radius: 24px;
 }
+
+/* =================================================================
+   FULL MOBILE RESPONSIVENESS � All Breakpoints
+   Covers: Navbar, Hero, Bento, Footer, Cards, About, Contact, Auth,
+           Admin, Checkout, Projects, Videos, Categories, Forms
+================================================================== */
+
+/* Base: prevent horizontal overflow globally */
+html, body { overflow-x: hidden; width: 100%; }
+
+/* -- NAVBAR ------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .navbar { top: 12px; width: 95%; }
+  .navbar__wordmark { font-size: 14px; }
+}
+@media (max-width: 768px) {
+  .navbar { top: 8px; width: 96%; height: 56px; }
+  .navbar__inner { padding: 0 14px; gap: 8px; }
+  .navbar__logo img { height: 36px !important; }
+  .navbar__wordmark { font-size: 13px; }
+  .navbar__actions { gap: 4px; }
+}
+@media (max-width: 480px) {
+  .navbar { top: 6px; width: 94%; border-radius: 16px; }
+  .navbar__wordmark { display: none; }
+}
+
+/* Mobile menu */
+.mobile-menu__nav { padding: 24px 16px; width: 100%; text-align: center; }
+@media (max-width: 375px) { .mobile-menu__link { font-size: 22px; } }
+
+/* -- HERO -------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero { padding: 80px 0 40px; min-height: auto; }
+  .hero__content { padding: 0 16px; }
+  .hero-graphic-container { height: 300px !important; margin-bottom: 32px !important; }
+}
+@media (max-width: 640px) {
+  .hero { padding: 72px 0 32px; }
+  .hero-graphic-container { height: 220px !important; margin-bottom: 20px !important; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 64px 0 24px; }
+  .hero-graphic-container { height: 180px !important; }
+  .magnetic-btn, .btn-ghost { width: 100%; justify-content: center; }
+}
+
+/* -- STATS STRIP ------------------------------------------------- */
+@media (max-width: 768px) {
+  .stats__inner { grid-template-columns: repeat(2, 1fr); border-radius: 20px; max-width: 100%; }
+}
+@media (max-width: 400px) {
+  .stats__inner { grid-template-columns: 1fr; border-radius: 16px; }
+  .stats__item + .stats__item::before { display: none; }
+}
+
+/* -- SECTION COMMON ---------------------------------------------- */
+@media (max-width: 768px) {
+  :root { --section-py: clamp(48px, 8vw, 100px); }
+  .section { padding: var(--section-py) 16px; }
+  .container { padding: 0 16px; }
+  .section__header { flex-direction: column !important; align-items: flex-start !important; gap: 12px; margin-bottom: 36px; }
+  .section__title { font-size: clamp(24px, 6vw, 42px); }
+  .section__subtitle { font-size: 14px; }
+}
+@media (max-width: 480px) {
+  :root { --section-py: clamp(36px, 8vw, 72px); }
+  .section { padding: var(--section-py) 12px; }
+}
+
+/* -- BENTO FEATURES ---------------------------------------------- */
+@media (max-width: 1024px) {
+  .bento-grid-wrap { grid-template-columns: repeat(2, 1fr) !important; }
+  .bento-card-large, .bento-card-medium { grid-column: span 2 !important; }
+}
+@media (max-width: 768px) {
+  .bento-grid-wrap { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .bento-card-large, .bento-card-medium { grid-column: span 1 !important; padding: 28px 20px !important; }
+  .bento-card-large-inner { max-width: 100% !important; }
+  .bento-card-medium-flex { flex-direction: column !important; gap: 24px !important; }
+  .bento-card-small { padding: 28px 20px !important; }
+}
+
+/* -- PROJECT GRID & CARDS --------------------------------------- */
+@media (max-width: 1024px) { .project-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+@media (max-width: 640px)  { .project-grid { grid-template-columns: 1fr; gap: 16px; } }
+@media (max-width: 480px) {
+  .project-card__body { padding: 14px; }
+  .project-card__actions { flex-wrap: wrap; gap: 6px; }
+  .btn-sm { flex: 1; text-align: center; justify-content: center; }
+}
+
+/* Filter pills scroll on mobile */
+@media (max-width: 640px) {
+  .filter-pills { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .filter-pills::-webkit-scrollbar { display: none; }
+  .filter-pill { flex-shrink: 0; font-size: 12px; padding: 6px 14px; }
+}
+
+/* -- CATEGORIES ------------------------------------------------- */
+@media (max-width: 1024px) { .categories-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+  .categories-grid { grid-template-columns: 1fr; gap: 12px; }
+  .category-card--large { grid-column: span 1; min-height: auto; padding: 24px !important; flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) { .category-card { padding: 20px; } }
+
+/* -- TESTIMONIALS ----------------------------------------------- */
+@media (max-width: 1024px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .testimonials-grid { grid-template-columns: 1fr; gap: 16px; } }
+
+/* -- VIDEO SECTION ---------------------------------------------- */
+@media (max-width: 768px) { .video-card { width: 260px; } }
+@media (max-width: 480px) { .video-card { width: 240px; } }
+
+/* -- FOOTER ----------------------------------------------------- */
+@media (max-width: 1024px) { .footer__inner { grid-template-columns: 1fr 1fr; gap: 32px; padding: 48px 20px 32px; } }
+@media (max-width: 640px) {
+  .footer__inner { grid-template-columns: 1fr; gap: 24px; padding: 36px 16px 24px; }
+  .footer__bottom { flex-direction: column; text-align: center; gap: 4px; padding: 14px 16px; }
+}
+
+/* -- ABOUT PAGE ------------------------------------------------- */
+@media (max-width: 768px) {
+  .about-creator-card { padding: 32px 16px !important; }
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) { .about-stats-grid { grid-template-columns: 1fr !important; } }
+
+/* -- CONTACT PAGE ----------------------------------------------- */
+@media (max-width: 768px) {
+  .contact-split-grid { grid-template-columns: 1fr !important; gap: 40px; }
+  .contact-socials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .contact-socials-grid { grid-template-columns: 1fr; }
+  .contact-container { padding: 80px 16px 40px !important; }
+}
+
+/* -- CHECKOUT PAGE ---------------------------------------------- */
+@media (max-width: 768px) { .checkout-grid { grid-template-columns: 1fr !important; gap: 24px; } }
+@media (max-width: 480px) {
+  .qr-code-wrap { width: 160px !important; height: 160px !important; }
+  .upi-id { font-size: 13px; padding: 8px 12px; word-break: break-all; }
+  .dropzone { padding: 24px 16px; }
+}
+
+/* -- PROJECT DETAIL PAGE ---------------------------------------- */
+@media (max-width: 1024px) {
+  .project-detail-grid { grid-template-columns: 1fr !important; gap: 32px; }
+  .project-detail-sidebar { position: static !important; }
+}
+@media (max-width: 640px) { .detail-buy-card { padding: 20px !important; } }
+
+/* -- ADMIN PANEL ------------------------------------------------ */
+@media (max-width: 1024px) { .admin-main { margin-left: 0; } .admin-header { padding: 16px 20px; } }
+@media (max-width: 768px) {
+  .admin-content { padding: 20px 16px; }
+  .admin-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .admin-stat-card { padding: 16px; }
+  .admin-stat-card__value { font-size: 22px; }
+  .admin-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .admin-table { min-width: 600px; }
+}
+@media (max-width: 640px) { .admin-stats-grid { grid-template-columns: 1fr; } .admin-header { padding: 12px 16px; } }
+
+/* -- ACCORDION -------------------------------------------------- */
+@media (max-width: 640px) {
+  .accordion__trigger { padding: 16px 18px; font-size: 14px; }
+  .accordion__answer { padding: 0 18px 16px; font-size: 13px; }
+}
+
+/* -- TOAST ------------------------------------------------------ */
+@media (max-width: 480px) {
+  .toast-container { bottom: 12px; right: 12px; left: 12px; }
+  .toast { min-width: auto; width: 100%; font-size: 13px; }
+}
+
+/* -- FORMS ------------------------------------------------------ */
+@media (max-width: 480px) {
+  .form-input, .form-select, .form-textarea {
+    font-size: 16px; /* prevents iOS auto-zoom */
+    padding: 12px 14px;
+  }
+}
+
+/* -- TECH MARQUEE ----------------------------------------------- */
+@media (max-width: 640px) {
+  .marquee-wrapper::before, .marquee-wrapper::after { width: 60px; }
+  .marquee-item { font-size: 13px; padding: 6px 12px; }
+}
+
+/* -- GLASS CARD ------------------------------------------------- */
+@media (max-width: 480px) { .glass-card { border-radius: 16px; } }
+
+/* -- MODAL ------------------------------------------------------ */
+@media (max-width: 640px) { .modal-overlay { padding: 12px; } }
+
+/* -- UTILITY CLASSES -------------------------------------------- */
+@media (max-width: 640px)  { .hide-mobile  { display: none !important; } }
+@media (min-width: 641px)  { .hide-desktop { display: none !important; } }
