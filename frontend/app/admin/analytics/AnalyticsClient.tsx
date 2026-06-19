@@ -49,14 +49,14 @@ export default function AnalyticsClient() {
           <AreaChart data={REVENUE_DATA}>
             <defs>
               <linearGradient id="ag1" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="#7C3AED" stopOpacity={0}/>
+                <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#7C3AED" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
             <XAxis dataKey="month" tick={{ fill: '#475569', fontSize: 12 }} axisLine={false} tickLine={false} />
-            <YAxis tick={{ fill: '#475569', fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => `₹${(v/1000).toFixed(0)}k`} />
-            <Tooltip contentStyle={{ background: '#141720', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 10 }} formatter={(v: number) => [formatPrice(v), 'Revenue']} />
+            <YAxis tick={{ fill: '#475569', fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => `₹${(v / 1000).toFixed(0)}k`} />
+            <Tooltip contentStyle={{ background: '#141720', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 10 }} formatter={(v) => [formatPrice(Number(v ?? 0)), "Revenue"]} />
             <Area type="monotone" dataKey="revenue" stroke="#7C3AED" strokeWidth={2} fill="url(#ag1)" />
           </AreaChart>
         </ResponsiveContainer>
