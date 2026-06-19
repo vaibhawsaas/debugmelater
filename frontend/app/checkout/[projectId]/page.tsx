@@ -118,7 +118,10 @@ export default function CheckoutPage({ params }: { params: Promise<{ projectId: 
               <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>Keep this order ID for reference</p>
             </div>
           ) : (
-            <div className="checkout-grid">
+            <div 
+              className={step === 'form' ? 'checkout-grid' : ''} 
+              style={step === 'payment' ? { maxWidth: 560, margin: '0 auto' } : {}}
+            >
               {/* Left: Project summary */}
               <div>
                 {/* Project card */}

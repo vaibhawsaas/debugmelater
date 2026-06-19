@@ -16,21 +16,71 @@ const SORT_OPTIONS = [
 ];
 
 // Reuse sample projects from featured
-const SAMPLE_PROJECTS: IProject[] = Array.from({ length: 9 }, (_, i) => ({
-  _id: `p${i + 1}`, title: `Premium Template ${i + 1}`, slug: `premium-template-${i + 1}`, code: `DML-00${i + 1}`,
-  description: 'A premium template.',
-  shortDescription: 'A stunning premium template with modern design and smooth animations.',
-  features: ['Responsive', 'Dark mode', 'TypeScript'],
-  technologies: ['Next.js', 'Three.js', 'GSAP', 'TypeScript'].slice(0, (i % 3) + 2),
-  category: CATEGORIES[(i % (CATEGORIES.length - 1)) + 1],
-  price: [899, 1299, 1699, 1999, 2499][i % 5],
-  currency: 'INR',
-  images: { main: '', screenshots: [] },
-  zipFile: { publicId: '', size: 0, url: '' },
-  status: 'published', views: 100 + i * 30, sales: 10 + i * 5,
-  rating: { average: 4.7 + (i % 3) * 0.1, count: 10 + i * 4 },
-  createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
-}));
+const PROJECT_IMAGES = [
+  {
+    main: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+    screenshots: [
+      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80'
+    ]
+  },
+  {
+    main: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    screenshots: [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80'
+    ]
+  },
+  {
+    main: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
+    screenshots: [
+      'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80'
+    ]
+  },
+  {
+    main: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
+    screenshots: [
+      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=80'
+    ]
+  },
+  {
+    main: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80',
+    screenshots: [
+      'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80'
+    ]
+  },
+  {
+    main: 'https://images.unsplash.com/photo-1541462608141-275d72e4ba02?auto=format&fit=crop&w=800&q=80',
+    screenshots: [
+      'https://images.unsplash.com/photo-1541462608141-275d72e4ba02?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80'
+    ]
+  }
+];
+
+const SAMPLE_PROJECTS: IProject[] = Array.from({ length: 9 }, (_, i) => {
+  const imgObj = PROJECT_IMAGES[i % PROJECT_IMAGES.length];
+  return {
+    _id: `p${i + 1}`, title: `Premium Template ${i + 1}`, slug: `premium-template-${i + 1}`, code: `DML-00${i + 1}`,
+    description: 'A premium template.',
+    shortDescription: 'A stunning premium template with modern design and smooth animations.',
+    features: ['Responsive', 'Dark mode', 'TypeScript'],
+    technologies: ['Next.js', 'Three.js', 'GSAP', 'TypeScript'].slice(0, (i % 3) + 2),
+    category: CATEGORIES[(i % (CATEGORIES.length - 1)) + 1],
+    price: [899, 1299, 1699, 1999, 2499][i % 5],
+    currency: 'INR',
+    images: { main: imgObj.main, screenshots: imgObj.screenshots },
+    zipFile: { publicId: '', size: 0, url: '' },
+    status: 'published', views: 100 + i * 30, sales: 10 + i * 5,
+    rating: { average: 4.7 + (i % 3) * 0.1, count: 10 + i * 4 },
+    createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
+  };
+});
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<IProject[]>(SAMPLE_PROJECTS);

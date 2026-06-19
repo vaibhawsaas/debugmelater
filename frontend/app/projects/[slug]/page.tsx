@@ -28,7 +28,15 @@ const SAMPLE_PROJECT = {
   ],
   technologies: ['Three.js', 'Next.js', 'GSAP', 'TypeScript', 'Framer Motion', 'Lenis'],
   youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-  images: { main: '', screenshots: ['', '', '', ''] },
+  images: {
+    main: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    screenshots: [
+      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
   status: 'published', views: 234, sales: 45,
   createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
   shortDescriptionMeta: '', features_extra: [], technologies_extra: [],
@@ -87,8 +95,17 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                 marginBottom: 12, display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: 48, fontWeight: 900, color: 'rgba(124,58,237,0.3)', border: '1px solid var(--border-subtle)',
                 overflow: 'hidden',
+                position: 'relative',
               }}>
-                DML
+                {project.images.screenshots?.[activeImage] || project.images.main ? (
+                  <img
+                    src={project.images.screenshots?.[activeImage] || project.images.main}
+                    alt={`${project.title} screenshot ${activeImage + 1}`}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  'DML'
+                )}
               </div>
 
               {/* Thumbnails */}
@@ -101,10 +118,20 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                       width: 72, height: 48, background: color, borderRadius: 8,
                       border: `2px solid ${activeImage === i ? 'var(--accent-purple)' : 'var(--border-subtle)'}`,
                       cursor: 'pointer', flexShrink: 0, transition: 'border-color .2s',
+                      overflow: 'hidden',
+                      padding: 0,
                     }}
                     id={`thumb-${i}`}
                     aria-label={`Screenshot ${i + 1}`}
-                  />
+                  >
+                    {project.images.screenshots?.[i] ? (
+                      <img
+                        src={project.images.screenshots[i]}
+                        alt={`thumbnail ${i + 1}`}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                    ) : null}
+                  </button>
                 ))}
               </div>
 

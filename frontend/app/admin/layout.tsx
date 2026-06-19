@@ -74,8 +74,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <header className="admin-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <button
-              className="navbar__hamburger"
-              style={{ display: 'flex' }}
+              className="admin-hamburger navbar__hamburger"
               onClick={() => setSidebarOpen(!sidebarOpen)}
               aria-label="Toggle sidebar"
               id="sidebar-toggle"
@@ -111,6 +110,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           aria-hidden="true"
         />
       )}
+      <style>{`
+        .admin-hamburger {
+          display: none !important;
+        }
+        @media (max-width: 1024px) {
+          .admin-hamburger {
+            display: flex !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

@@ -17,7 +17,15 @@ const SAMPLE_PROJECTS: IProject[] = [
     shortDescription: 'Premium 3D portfolio template with Three.js particles, GSAP animations, and dark glassmorphism design.',
     features: ['Three.js particles', 'GSAP scroll animations', 'Dark mode'], technologies: ['Three.js', 'Next.js', 'GSAP', 'TypeScript'],
     category: 'Portfolio', price: 1299, currency: 'INR',
-    images: { main: '', screenshots: [] }, zipFile: { publicId: '', size: 0, url: '' },
+    images: {
+      main: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+      screenshots: [
+        'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80'
+      ]
+    }, zipFile: { publicId: '', size: 0, url: '' },
     status: 'published', views: 234, sales: 45, rating: { average: 4.9, count: 24 },
     createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
   },
@@ -27,7 +35,14 @@ const SAMPLE_PROJECTS: IProject[] = [
     shortDescription: 'Full-featured SaaS dashboard with analytics, user management, and beautiful charts.',
     features: ['Dark theme', 'Real-time charts', 'Auth system'], technologies: ['React', 'TypeScript', 'Recharts', 'Tailwind'],
     category: 'SaaS Dashboard', price: 1999, currency: 'INR',
-    images: { main: '', screenshots: [] }, zipFile: { publicId: '', size: 0, url: '' },
+    images: {
+      main: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+      screenshots: [
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80'
+      ]
+    }, zipFile: { publicId: '', size: 0, url: '' },
     status: 'published', views: 189, sales: 31, rating: { average: 4.8, count: 18 },
     createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
   },
@@ -37,7 +52,13 @@ const SAMPLE_PROJECTS: IProject[] = [
     shortDescription: 'High-converting landing page template with smooth Framer Motion animations and modern design.',
     features: ['Framer Motion', 'Smooth scroll', 'CTA optimized'], technologies: ['Next.js', 'Framer Motion', 'Lenis'],
     category: 'Landing Pages', price: 899, currency: 'INR',
-    images: { main: '', screenshots: [] }, zipFile: { publicId: '', size: 0, url: '' },
+    images: {
+      main: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
+      screenshots: [
+        'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80'
+      ]
+    }, zipFile: { publicId: '', size: 0, url: '' },
     status: 'published', views: 421, sales: 78, rating: { average: 5.0, count: 41 },
     createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
   },
@@ -47,7 +68,13 @@ const SAMPLE_PROJECTS: IProject[] = [
     shortDescription: 'Full-screen immersive 3D website with WebGL shaders, particle systems, and cinematic animations.',
     features: ['WebGL shaders', 'Particle systems', '60fps'], technologies: ['Three.js', 'GSAP', 'React Three Fiber'],
     category: '3D Websites', price: 2499, currency: 'INR',
-    images: { main: '', screenshots: [] }, zipFile: { publicId: '', size: 0, url: '' },
+    images: {
+      main: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
+      screenshots: [
+        'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=80'
+      ]
+    }, zipFile: { publicId: '', size: 0, url: '' },
     status: 'published', views: 312, sales: 22, rating: { average: 4.9, count: 15 },
     createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
   },
@@ -57,7 +84,13 @@ const SAMPLE_PROJECTS: IProject[] = [
     shortDescription: 'Production-ready admin panel with role management, analytics dashboard, and data tables.',
     features: ['Role-based auth', 'Data tables', 'Analytics'], technologies: ['Next.js', 'TypeScript', 'MongoDB'],
     category: 'Admin Panel', price: 1699, currency: 'INR',
-    images: { main: '', screenshots: [] }, zipFile: { publicId: '', size: 0, url: '' },
+    images: {
+      main: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80',
+      screenshots: [
+        'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80'
+      ]
+    }, zipFile: { publicId: '', size: 0, url: '' },
     status: 'published', views: 156, sales: 19, rating: { average: 4.7, count: 12 },
     createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
   },
@@ -67,7 +100,13 @@ const SAMPLE_PROJECTS: IProject[] = [
     shortDescription: 'Awwwards-level creative agency website with cursor effects, scroll animations, and smooth transitions.',
     features: ['Custom cursor', 'Horizontal scroll', 'Parallax'], technologies: ['Next.js', 'GSAP', 'Lenis', 'Framer Motion'],
     category: 'Portfolio', price: 1499, currency: 'INR',
-    images: { main: '', screenshots: [] }, zipFile: { publicId: '', size: 0, url: '' },
+    images: {
+      main: 'https://images.unsplash.com/photo-1541462608141-275d72e4ba02?auto=format&fit=crop&w=800&q=80',
+      screenshots: [
+        'https://images.unsplash.com/photo-1541462608141-275d72e4ba02?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80'
+      ]
+    }, zipFile: { publicId: '', size: 0, url: '' },
     status: 'published', views: 278, sales: 34, rating: { average: 4.8, count: 28 },
     createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
   },

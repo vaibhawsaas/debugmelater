@@ -428,7 +428,7 @@ button {
 .mobile-menu__link {
   font-size: 28px;
   font-weight: 700;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.6);
   letter-spacing: -0.02em;
   padding: 8px 24px;
   transition: color 0.2s;
@@ -440,7 +440,7 @@ button {
   opacity: 0;
 }
 
-.mobile-menu__link:hover { color: var(--text-primary); }
+.mobile-menu__link:hover { color: #ffffff; }
 
 .mobile-menu__admin {
   display: flex;
@@ -448,17 +448,17 @@ button {
   gap: 8px;
   margin-top: 24px;
   padding: 12px 28px;
-  border: 1px solid var(--border-accent);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-pill);
   font-size: 15px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #ffffff;
   transition: all 0.25s;
 }
 
 .mobile-menu__admin:hover {
-  background: rgba(124,58,237,0.12);
-  border-color: var(--accent-purple);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -1184,6 +1184,14 @@ button {
 }
 
 @media (max-width: 640px) { .category-card--large { grid-column: span 1; } }
+@media (max-width: 480px) {
+  .category-card--large {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px !important;
+    min-height: auto !important;
+  }
+}
 
 .category-card__icon {
   margin-bottom: 16px;

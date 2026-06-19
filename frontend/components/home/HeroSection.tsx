@@ -110,6 +110,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+          className="hero-graphic-container"
           style={{ position: 'relative', width: '100%', maxWidth: '800px', height: '480px', margin: '0 auto 64px' }}
         >
           {/* Main Dashboard Mockup */}
@@ -128,7 +129,7 @@ export default function HeroSection() {
           </div>
 
           {/* Floating Card 1: Components */}
-          <motion.div custom={0} variants={floatingVariants} animate="float" style={{ position: 'absolute', top: '15%', left: '-10%', background: '#FFF', padding: '16px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(15,23,42,0.1)', display: 'flex', alignItems: 'center', gap: '16px', border: '1px solid rgba(15,23,42,0.03)', transform: 'rotate(-4deg)' }}>
+          <motion.div custom={0} variants={floatingVariants} animate="float" className="floating-card-1" style={{ position: 'absolute', top: '15%', left: '-10%', background: '#FFF', padding: '16px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(15,23,42,0.1)', display: 'flex', alignItems: 'center', gap: '16px', border: '1px solid rgba(15,23,42,0.03)', transform: 'rotate(-4deg)' }}>
             <div style={{ background: '#E0F2FE', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0284C7' }}>
               <Code2 size={20} />
             </div>
@@ -139,7 +140,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Floating Card 2: Quality */}
-          <motion.div custom={1} variants={floatingVariants} animate="float" style={{ position: 'absolute', top: '5%', right: '-8%', background: '#FFF', padding: '16px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(15,23,42,0.1)', display: 'flex', alignItems: 'center', gap: '16px', border: '1px solid rgba(15,23,42,0.03)', transform: 'rotate(2deg)' }}>
+          <motion.div custom={1} variants={floatingVariants} animate="float" className="floating-card-2" style={{ position: 'absolute', top: '5%', right: '-8%', background: '#FFF', padding: '16px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(15,23,42,0.1)', display: 'flex', alignItems: 'center', gap: '16px', border: '1px solid rgba(15,23,42,0.03)', transform: 'rotate(2deg)' }}>
             <div style={{ background: '#DCFCE7', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16A34A' }}>
               <ShieldCheck size={20} />
             </div>
@@ -150,7 +151,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Floating Card 3: Stack */}
-          <motion.div custom={2} variants={floatingVariants} animate="float" style={{ position: 'absolute', bottom: '15%', left: '-15%', background: '#FFF', padding: '16px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(15,23,42,0.1)', display: 'flex', alignItems: 'center', gap: '16px', border: '1px solid rgba(15,23,42,0.03)', transform: 'rotate(3deg)', zIndex: 10 }}>
+          <motion.div custom={2} variants={floatingVariants} animate="float" className="floating-card-3" style={{ position: 'absolute', bottom: '15%', left: '-15%', background: '#FFF', padding: '16px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(15,23,42,0.1)', display: 'flex', alignItems: 'center', gap: '16px', border: '1px solid rgba(15,23,42,0.03)', transform: 'rotate(3deg)', zIndex: 10 }}>
             <div style={{ background: '#F3E8FF', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9333EA' }}>
               <Layers size={20} />
             </div>
@@ -161,7 +162,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Floating Card 4: Access */}
-          <motion.div custom={3} variants={floatingVariants} animate="float" style={{ position: 'absolute', bottom: '5%', right: '-12%', background: '#FFF', padding: '20px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(15,23,42,0.1)', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px', border: '1px solid rgba(15,23,42,0.03)', transform: 'rotate(-2deg)' }}>
+          <motion.div custom={3} variants={floatingVariants} animate="float" className="floating-card-4" style={{ position: 'absolute', bottom: '5%', right: '-12%', background: '#FFF', padding: '20px 24px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(15,23,42,0.1)', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px', border: '1px solid rgba(15,23,42,0.03)', transform: 'rotate(-2deg)' }}>
             <div style={{ background: '#FEF3C7', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#D97706' }}>
               <Download size={20} />
             </div>
@@ -172,6 +173,61 @@ export default function HeroSection() {
           </motion.div>
 
         </motion.div>
+
+        <style>{`
+          @media (max-width: 1024px) {
+            .floating-card-1 {
+              left: -2% !important;
+              transform: scale(0.9) rotate(-4deg) !important;
+            }
+            .floating-card-2 {
+              right: -2% !important;
+              transform: scale(0.9) rotate(2deg) !important;
+            }
+            .floating-card-3 {
+              left: -3% !important;
+              transform: scale(0.9) rotate(3deg) !important;
+            }
+            .floating-card-4 {
+              right: -3% !important;
+              transform: scale(0.9) rotate(-2deg) !important;
+            }
+          }
+          @media (max-width: 768px) {
+            .hero-graphic-container {
+              height: 320px !important;
+              margin-bottom: 40px !important;
+            }
+            .floating-card-1 {
+              left: 2% !important;
+              top: 10% !important;
+              transform: scale(0.8) rotate(-4deg) !important;
+            }
+            .floating-card-2 {
+              right: 2% !important;
+              top: 5% !important;
+              transform: scale(0.8) rotate(2deg) !important;
+            }
+            .floating-card-3 {
+              left: 2% !important;
+              bottom: 10% !important;
+              transform: scale(0.8) rotate(3deg) !important;
+            }
+            .floating-card-4 {
+              right: 2% !important;
+              bottom: 5% !important;
+              transform: scale(0.8) rotate(-2deg) !important;
+            }
+          }
+          @media (max-width: 560px) {
+            .hero-graphic-container {
+              height: 240px !important;
+            }
+            .floating-card-1, .floating-card-2, .floating-card-3, .floating-card-4 {
+              display: none !important;
+            }
+          }
+        `}</style>
 
         {/* Action Buttons */}
         <motion.div

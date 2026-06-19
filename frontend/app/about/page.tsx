@@ -29,7 +29,7 @@ export default function AboutPage() {
           </div>
 
           {/* YouTube Creator Profile */}
-          <div className="glass-card" style={{ maxWidth: 800, margin: '0 auto 80px', padding: '48px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, textAlign: 'center', borderRadius: 24, position: 'relative', overflow: 'hidden' }}>
+          <div className="glass-card about-creator-card" style={{ maxWidth: 800, margin: '0 auto 80px', padding: '48px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, textAlign: 'center', borderRadius: 24, position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 120, background: 'linear-gradient(135deg, rgba(255,0,0,0.15), rgba(124,58,237,0.15))', zIndex: 0 }}></div>
             
             <div style={{ position: 'relative', zIndex: 1, width: 220, height: 220, borderRadius: '50%', overflow: 'hidden', border: '6px solid #0F1118', boxShadow: '0 0 40px rgba(255,0,0,0.3)', marginTop: 10, background: '#0A0C12' }}>
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <div style={{ textAlign: 'center', marginBottom: 80 }}>
             <p className="section__eyebrow">By the numbers</p>
             <h2 className="section__title" style={{ marginBottom: 48 }}>The Numbers Speak</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+            <div className="about-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
               {[
                 { value: '50+', label: 'Templates Sold', color: '#7C3AED' },
                 { value: '1,200+', label: 'Happy Customers', color: '#3B82F6' },
@@ -99,7 +99,7 @@ export default function AboutPage() {
           <div style={{ textAlign: 'center', marginBottom: 80 }}>
             <p className="section__eyebrow">Tech Stack</p>
             <h2 className="section__title" style={{ marginBottom: 48 }}>Our Arsenal</h2>
-            <div style={{ maxWidth: 600, margin: '0 auto', position: 'relative', height: 200 }}>
+            <div className="about-tech-container" style={{ maxWidth: 600, margin: '0 auto', position: 'relative', height: 200 }}>
               {TECH_NODES.map((node) => (
                 <div
                   key={node.label}
@@ -133,6 +133,32 @@ export default function AboutPage() {
               Explore Projects →
             </a>
           </div>
+
+          <style>{`
+            @media (max-width: 900px) {
+              .about-stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+              }
+            }
+            @media (max-width: 768px) {
+              .about-creator-card {
+                padding: 32px 16px !important;
+              }
+              .about-tech-container {
+                height: 240px !important;
+              }
+              .about-tech-container > div {
+                font-size: 11px !important;
+                padding: 6px 12px !important;
+              }
+            }
+            @media (max-width: 480px) {
+              .about-stats-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+              }
+            }
+          `}</style>
         </div>
       </div>
     </div>
